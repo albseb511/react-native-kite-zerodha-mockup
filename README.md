@@ -28,3 +28,11 @@ I am working on the react-navigation presently, so you will find a more cleaner 
 PS: I have used yarn, npm has been creating some issues for me.
 
 If you are facing any issues, try clearing cache, watchman etc. and even remove node_modules and install npm again, and also link with react-native link
+
+Update log 18th May:
+
+I had made a big blunder on the react-navigation modules. It was the wrong version on the package.json and I also had a double installed with npm and yarn. 
+
+I have made a change now and its working now. 
+I have been able to make a cleaner code right now,
+seperating the files.

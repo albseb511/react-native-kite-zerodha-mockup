@@ -1,8 +1,7 @@
 import React, {Component } from 'react';
-//import {Button} from 'react-native-elements';
 import { Alert, StyleSheet, View, Text , TextInput, Image, Button, Linking} from 'react-native';
 
-export default class PinScreen extends Component {
+export default class Pin extends Component {
   constructor(props) {
     super(props);
     this.state = { 

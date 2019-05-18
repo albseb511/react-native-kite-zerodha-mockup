@@ -1,9 +1,11 @@
 import React, {Component } from 'react';
 import { Alert, StyleSheet, View, Text , TextInput, TouchableOpacity} from 'react-native';
-import { Icon } from 'react-native-elements';
+import {appStyle, cards, navBar} from './app/themes/appStyle'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 
-export default class Market extends Component {
+import {createStackNavigator, createAppContainer} from 'react-navigation'
+
+ class MarketScreen extends Component {
   constructor(props) {
     super(props);
     this.state = { 
@@ -13,7 +15,7 @@ export default class Market extends Component {
       icon2Color: "gray",
       icon3Color: "gray",
       icon4Color: "gray",
-      heightCard: 56,
+      heightCard: 75,
       visibility: 0
     };
     
@@ -77,7 +79,7 @@ export default class Market extends Component {
     })
 
    }
-
+  
    onPressIcon4 = () => {
     this.setState({
       iconLeftColor : "gray",
@@ -90,13 +92,13 @@ export default class Market extends Component {
    }
 //CARD EXPAND TOGGLE FUNCTION
    cardExpand = () => {
-    if(`${this.state.heightCard}`!=112)
+    if(`${this.state.heightCard}`!=150)
     this.setState({
-      heightCard: 56*2           
+      heightCard: 75*2           
     })
     else
     this.setState({
-      heightCard: 112/2           
+      heightCard: 150/2           
     })
 
    }
@@ -109,7 +111,7 @@ export default class Market extends Component {
     const { search } = this.state;
 
     return (
-      <View style={styles.container}>
+      <View style={appStyle.container}>
 
 
       <View style={navBar.topBar}>
@@ -151,8 +153,8 @@ export default class Market extends Component {
 
 
 
-        <View  style={styles.aBarRow}>
-          <View style={styles.aBarIcon}> 
+        <View  style={navBar.aBarRow}>
+          <View style={navBar.aBarIcon}> 
              <Text style={{marginTop:20}}>
                <FontAwesome5 name={'search'}  size={15}/>
               </Text>
@@ -161,16 +163,17 @@ export default class Market extends Component {
             placeholder="Add"
             onChangeText={this.updateSearch}
             value={search}
-            style = {styles.aBar}
+            style = {navBar.aBar}
           />
-          <View style={styles.aBarBox}>
+          <View style={navBar.aBarBox}>
               <Text style={{marginTop: 5}}>
                 <FontAwesome5 name={'binoculars'}  size={25}/>
               </Text>
               <Text style={{justifyContent:'center', fontSize:20, marginTop: 5}}> 1</Text>  
           </View>    
         </View> 
-          
+       
+
         <TouchableOpacity 
           style = {[cards.companyCard, {height:this.state.heightCard},]}
            onPress = {this.cardExpand.bind()} >
@@ -197,7 +200,7 @@ export default class Market extends Component {
           </View>
         </TouchableOpacity>
 
-
+        
       
         <TouchableOpacity style = {[cards.companyCard, ]} >
           <View style = {cards.companyDetails}>
@@ -223,7 +226,7 @@ export default class Market extends Component {
           </View>
         </TouchableOpacity>
 
-
+        
         <TouchableOpacity style = {[cards.companyCard, ]} >
           <View style = {cards.companyDetails}>
             <View style = {{flexDirection:'row'}}>
@@ -247,169 +250,79 @@ export default class Market extends Component {
             </View>
           </View>
         </TouchableOpacity>        
-
-
+        
      </View>
+
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-   flex: 1,
-   flexDirection: 'column',
-   alignItems: 'center',
-   
-  },
-  loginBox: {
-    justifyContent: 'center',
-    marginTop: 200
-  },
-  buttonContainer: {
-    justifyContent: 'center',
-    width: 260,
-    height: 70,
-    marginTop: 5
-    
-  
-  },
-  logoHome:{
-    marginTop: -100,
-    marginBottom:100,
-    width: 200,
-    resizeMode: "contain"
-  },
-   inputText: {
-     height: 40, 
-     width: 300, 
-     borderColor: 'gray', 
-     borderBottomWidth: 0.5,
-     marginBottom: 10
-     
-    },
-    GB:{
-      marginTop: 10,
-      fontSize: 10,
-      marginRight: 30
-    },
-    forgotPIN:
-    {
-      marginTop: 10,
-      fontSize: 10,
-      marginLeft: 30
-    },
-    header:
-    {
-      color: 'gray'
-    },
-    pinPageText:
-    {
-      flexDirection: 'row'
-    },
-    toolbar: {
-      backgroundColor: '#2196F3',
-      height: 56,
-      alignSelf: 'stretch',
-      textAlign: 'center',
-      marginBottom: 200,
-    }, 
-    aBar: {
-      justifyContent: 'flex-start',
-      width:300,
-      color:"#000",
-      marginTop: 15,
-      marginBottom:0,
-      marginRight:5,
-      flex:5.5,
-      borderBottomWidth:1,
-      alignSelf:'center',
-      bottom: 5
 
-    },
-    aBarIcon:{
-      flex:0.5,
-      width:40,
-      height:40,
-      marginTop: 20,
-      marginRight: 10,
-      marginLeft: 15
-    },
-    aBarBox:{
-      flex:1,
-      width: 30,
-      height:30,
-      borderWidth:0,
-      marginTop: 20,
-      marginRight: 10,
-      marginLeft: 10,
-      flexDirection: 'row'
-    },
-    aBarRow: {
-      flexDirection: 'row',
-      justifyContent: 'space-evenly',
-      height: 80,
-      
-    },
+import {login} from './app/themes/login_style'
 
-})
-
-const cards = StyleSheet.create({
-  companyCard: {
-    height: 75,
-    flexDirection: 'row',
-    borderBottomWidth: 0.3,
-    borderColor: 'gray'
-  },
-  companyDetails: {
-    flex:1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    
-  },
-  companyPrice: {
-    flex:1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    
-    
-  },
-  ltext: {
-    fontSize: 14,
-    marginLeft: 10,
-    marginRight: 10
-
-  },
-  stext: {
-    fontSize: 10,
-    marginLeft: 10,
-    marginRight: 10    
-  },
-  circle: {
-    width: 10,
-    height: 10,
-    borderRadius: 10/2,
-    borderWidth:0.5,
-    marginTop: 5,
-    marginRight:-5
-},
- right: {
-   alignSelf: 'flex-end',
-  
- }
-
-})
-
-const navBar = StyleSheet.create({
-  topBar:{
-    height: 56,
-    flexDirection: 'row'
-  },
-  icon: {
-    flex:1,
-    
-  },
-  leftIcon:{
-    flex:3,
+class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { 
+      clientid: '' ,
+      password: ''
+    };
+  }
+  onLogin() {
+    const { clientId, password } = this.state;
+    if(clientId!=null)
+    Alert.alert('Credentials', `${clientId} + ${password}`);
   }
 
+  render() {
+    return (
+      <View style={login.container}>
+        
+        <View style={login.loginBox}>
+          
+          <Image source={require('./app/src/img/login_logo.png')} style={login.logoHome} />
+          
+          <Text style={login.header}> CLIENT ID </Text>
+          
+          <TextInput style={login.inputText}
+          onChangeText={(clientId) => this.setState({clientId})}
+          value={this.state.text} placeholder="Type in your Client ID"/>
+
+          <Text style={login.header}> PASSWORD</Text>        
+
+          <TextInput style={login.inputText}
+            onChangeText={(password) => this.setState({password})}
+            value={this.state.text} 
+             placeholder="Type in your Password"
+             secureTextEntry={true}/>
+          
+        </View>
+
+
+        <View style={login.buttonContainer}>
+          <Button
+            onPress={this.onLogin.bind(this)}
+            title="NEXT"
+            type = "solid"
+            //color="#e17055" 
+            color="#e74c3c"
+            raised
+            />
+       </View>
+          <Text style={login.forgotpass} 
+             onPress={ ()=>{ Linking.openURL('https://kite.zerodha.com/forgot')}}>
+              Forgot Your Password?</Text>        
+	  
+      </View>
+    );
+  }
+}
+
+
+
+const AppNav = createStackNavigator({
+  
+  Market: MarketScreen
 });
+
+export default createAppContainer(AppNav);

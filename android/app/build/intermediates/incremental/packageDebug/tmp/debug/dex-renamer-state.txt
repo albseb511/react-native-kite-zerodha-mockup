@@ -1,4 +1,4 @@
-#Thu May 16 17:34:38 IST 2019
-base.0=/Users/Admin/Documents/WORK/N_BoT/react/kite/android/app/build/intermediates/transforms/dexMerger/debug/0
+#Fri May 17 20:05:36 IST 2019
+base.0=/Users/Admin/Documents/WORK/N_BoT/react/react-native-kite-zerodha-mockup/android/app/build/intermediates/transforms/dexMerger/debug/0
 renamed.0=classes.dex
 path.0=classes.dex

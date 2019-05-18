@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/Admin/Documents/WORK/N_BoT/react/kite/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-bg/values-bg.xml",
+            "outputFile": "/Users/Admin/Documents/WORK/N_BoT/react/react-native-kite-zerodha-mockup/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-bg/values-bg.xml",
             "map": [
                 {
                     "source": "/Users/Admin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/c0f13bb925f6f54e2c872de087693630/res/values-bg/values-bg.xml",
