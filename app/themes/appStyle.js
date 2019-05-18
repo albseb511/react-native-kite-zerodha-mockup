@@ -11,7 +11,7 @@ export const appStyle = StyleSheet.create({
   })
   
 
-  export const cards = StyleSheet.create({
+export const cards = StyleSheet.create({
     companyCard: {
       height: 75,
       flexDirection: 'row',
@@ -59,7 +59,7 @@ export const appStyle = StyleSheet.create({
   
 
 
-  export const navBar = StyleSheet.create({
+export const navBar = StyleSheet.create({
     topBar:{
       height: 56,
       flexDirection: 'row'

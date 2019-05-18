@@ -1,9 +1,18 @@
+//<Button
+//            onPress={this.onLogin.bind(this)}
+
 import React, {Component } from 'react';
-import { Alert, View, Text , TextInput, Image, Button, Linking} from 'react-native';
+import { Alert, 
+         View, 
+         Text,
+         TextInput, 
+         Image, 
+         Button, 
+         Linking} from 'react-native';
 
 import {login} from '../themes/login_style'
 
-class Login extends Component {
+export class Login extends Component {
   constructor(props) {
     super(props);
     this.state = { 
@@ -44,7 +53,7 @@ class Login extends Component {
 
         <View style={login.buttonContainer}>
           <Button
-            onPress={this.onLogin.bind(this)}
+           onPress={() => this.props.navigation.navigate('DashScreen')}
             title="NEXT"
             type = "solid"
             //color="#e17055" 

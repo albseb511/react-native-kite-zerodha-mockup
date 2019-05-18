@@ -1,11 +1,11 @@
 import React, {Component } from 'react';
 import { Alert, StyleSheet, View, Text , TextInput, TouchableOpacity} from 'react-native';
-import {appStyle, cards, navBar} from './app/themes/appStyle'
+import {appStyle, cards, navBar} from '../themes/appStyle'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 
 import {createStackNavigator, createAppContainer} from 'react-navigation'
 
- class MarketScreen extends Component {
+export class MarketScreen extends Component {
   constructor(props) {
     super(props);
     this.state = { 
@@ -256,73 +256,3 @@ import {createStackNavigator, createAppContainer} from 'react-navigation'
     );
   }
 }
-
-
-import {login} from './app/themes/login_style'
-
-class Login extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { 
-      clientid: '' ,
-      password: ''
-    };
-  }
-  onLogin() {
-    const { clientId, password } = this.state;
-    if(clientId!=null)
-    Alert.alert('Credentials', `${clientId} + ${password}`);
-  }
-
-  render() {
-    return (
-      <View style={login.container}>
-        
-        <View style={login.loginBox}>
-          
-          <Image source={require('./app/src/img/login_logo.png')} style={login.logoHome} />
-          
-          <Text style={login.header}> CLIENT ID </Text>
-          
-          <TextInput style={login.inputText}
-          onChangeText={(clientId) => this.setState({clientId})}
-          value={this.state.text} placeholder="Type in your Client ID"/>
-
-          <Text style={login.header}> PASSWORD</Text>        
-
-          <TextInput style={login.inputText}
-            onChangeText={(password) => this.setState({password})}
-            value={this.state.text} 
-             placeholder="Type in your Password"
-             secureTextEntry={true}/>
-          
-        </View>
-
-
-        <View style={login.buttonContainer}>
-          <Button
-            onPress={this.onLogin.bind(this)}
-            title="NEXT"
-            type = "solid"
-            //color="#e17055" 
-            color="#e74c3c"
-            raised
-            />
-       </View>
-          <Text style={login.forgotpass} 
-             onPress={ ()=>{ Linking.openURL('https://kite.zerodha.com/forgot')}}>
-              Forgot Your Password?</Text>        
-	  
-      </View>
-    );
-  }
-}
-
-
-
-const AppNav = createStackNavigator({
-  
-  Market: MarketScreen
-});
-
-export default createAppContainer(AppNav);

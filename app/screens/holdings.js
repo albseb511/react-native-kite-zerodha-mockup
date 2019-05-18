@@ -3,7 +3,7 @@ import { Alert, Button, StyleSheet, View, Text , TextInput, TouchableOpacity} fr
 import { Icon } from 'react-native-elements';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 
-export default class Holdings extends Component {
+export class Holdings extends Component {
   constructor(props) {
     super(props);
     this.state = { 
