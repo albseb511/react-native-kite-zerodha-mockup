@@ -36,3 +36,12 @@ I had made a big blunder on the react-navigation modules. It was the wrong versi
 I have made a change now and its working now. 
 I have been able to make a cleaner code right now,
 seperating the files.
+
+Update log 18th May:
+
+I have been able to fix most of the issues in navigation. Quite surprised why I didnt get this in the first place.
+The code can be cloned and as long as dependancies are taken care of, you can run the demo app.
+
+Next to DO:
+Detailing on the drawer menu
+Move bottom tab to top (or get rid of it)
