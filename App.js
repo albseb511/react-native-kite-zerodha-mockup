@@ -24,20 +24,23 @@ import {Holdings} from './app/screens/Holdings'
 import {Notifications} from './app/screens/Notifications'
 
 
-// Dash Tab Navigator Definition
-const __DashTab = createBottomTabNavigator ({
-  MarketScreen,
-  Orders,
-  Holdings,
-  Notifications
+/* Dash Tab Navigator Definition
+ const __DashTab = createBottomTabNavigator ({
+ MarketScreen,
+ Orders,
+ Holdings,
+ Notifications
   
 
-})
+})  
+To use remove MarketScreen from AppNav StackNavigator,
+and change to __DashTab
+*/
 
 
 //STACK NAVIGATOR DEFINITION
 const AppNav = createStackNavigator({
-  DASHTB:  __DashTab
+  DASHTB:  MarketScreen
   
 },
 {
@@ -80,4 +83,10 @@ const LoginNav = createStackNavigator ({
 )
 
 
-export default createAppContainer(LoginNav);
+const NavKite = createAppContainer(LoginNav);
+
+export default class NavigatorKit extends Component {
+  render(){
+  return <NavKite />
+  }
+}

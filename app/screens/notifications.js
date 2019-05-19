@@ -132,7 +132,7 @@ __tChange1 = () => {
         
         <View style={navBar.leftIcon}>
           
-          <Text style={{margin: 20}} onPress={this.onPressIconLeft.bind()}>
+          <Text style={{margin: 20}} onPress={() => this.props.navigation.openDrawer()}>
             
               <FontAwesome5 name={'bars'}  size={25} color={this.state.iconLeftColor}/>
             
@@ -140,19 +140,19 @@ __tChange1 = () => {
         </View>  
 
         <View style={navBar.icon}>
-         <Text style={{marginTop: 20}} onPress={this.onPressIcon1.bind()}>
+         <Text style={{marginTop: 20}} onPress={() => this.props.navigation.navigate('Marketwatch')}>
             <FontAwesome5 name={'binoculars'} size={25} color={this.state.icon1Color}/>
           </Text>
         </View>
 
         <View style={navBar.icon}>
-           <Text style={{marginTop: 20}} onPress={this.onPressIcon2.bind()}>
+           <Text style={{marginTop: 20}} onPress={() => this.props.navigation.navigate('Orders')}>
               <FontAwesome5 name={'book-open'} size={25} color={this.state.icon2Color}/>
             </Text>  
         </View>
 
         <View style={navBar.icon}>
-              <Text style={{marginTop: 20}} onPress={this.onPressIcon3.bind()}>
+              <Text style={{marginTop: 20}} onPress={() => this.props.navigation.navigate('Portfolio')}>
                 <FontAwesome5 name={'suitcase'} size={25} color={this.state.icon3Color}/>
               </Text>
         </View>
