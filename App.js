@@ -10,9 +10,6 @@ import { Alert,
         TouchableOpacity,
         Button} from 'react-native';
 
-
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
-
 import {createStackNavigator, 
         createAppContainer, 
         createDrawerNavigator, 
@@ -20,6 +17,7 @@ import {createStackNavigator,
         createSwitchNavigator} from 'react-navigation'
 
 import {Login} from './app/screens/Login'        
+import {Pin} from './app/screens/Pin'
 import {MarketScreen} from './app/screens/Market'
 import {Orders} from './app/screens/Orders'
 import {Holdings} from './app/screens/Holdings'
@@ -65,10 +63,21 @@ const __DrawNav = createDrawerNavigator({
 });
 
 
-
 const _SwitchApp = createSwitchNavigator({
-  Welcome: Login,
   DashScreen: __DrawNav
-})
+},
+)
 
-export default createAppContainer(_SwitchApp);
+
+const LoginNav = createStackNavigator ({
+  Login: Login,
+  Pin: Pin,
+  DashScreen: _SwitchApp
+
+},{
+  headerMode: 'none'
+}
+)
+
+
+export default createAppContainer(LoginNav);

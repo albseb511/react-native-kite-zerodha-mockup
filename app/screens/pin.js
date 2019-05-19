@@ -1,7 +1,7 @@
 import React, {Component } from 'react';
 import { Alert, StyleSheet, View, Text , TextInput, Image, Button, Linking} from 'react-native';
 
-export default class Pin extends Component {
+export class Pin extends Component {
   constructor(props) {
     super(props);
     this.state = { 
@@ -23,7 +23,7 @@ export default class Pin extends Component {
       <View style={styles.container}>
         
         <View style={styles.loginBox}>
-          <Image source={require('./app/src/img/login_logo.png')} style={styles.logoHome} />
+          <Image source={require('../src/img/login_logo.png')} style={styles.logoHome} />
           <Text style={styles.header}> PIN</Text>        
           <TextInput style={styles.inputText}
            onChangeText={(PIN) => this.setState({PIN})}
@@ -36,7 +36,7 @@ export default class Pin extends Component {
 
         <View style={styles.buttonContainer}>
           <Button
-            onPress={this.onLogin.bind(this)}
+            onPress={() => this.props.navigation.navigate('DashScreen')}
             title="LOGIN"
             type = "solid"
             //color="#e17055" 

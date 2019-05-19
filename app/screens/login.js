@@ -10,7 +10,12 @@ import { Alert,
          Button, 
          Linking} from 'react-native';
 
+import {createStackNavigator} from 'react-navigation'
+
 import {login} from '../themes/login_style'
+import {Pin} from '../screens/Pin'
+
+
 
 export class Login extends Component {
   constructor(props) {
@@ -53,7 +58,7 @@ export class Login extends Component {
 
         <View style={login.buttonContainer}>
           <Button
-           onPress={() => this.props.navigation.navigate('DashScreen')}
+           onPress={() => this.props.navigation.navigate('Pin')}
             title="NEXT"
             type = "solid"
             //color="#e17055" 
