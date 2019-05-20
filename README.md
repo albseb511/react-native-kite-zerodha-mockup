@@ -1,6 +1,15 @@
 # react-native-kite-zerodha-mockup
 //////////////////////////////////////////////////
 
+Update 20th May:
+Login Details have been added
+Working on logged state checker 
+and a logout option
+
+//////////////////////////////////////////////////
+
+//////////////////////////////////////////////////
+
 Update 19th May:
 Integrated PIN page.
 made changes to Routing
