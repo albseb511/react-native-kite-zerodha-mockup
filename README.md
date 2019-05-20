@@ -1,5 +1,5 @@
 # react-native-kite-zerodha-mockup
-//////////////////////////////////////////////////
+
 ## What is this repo or project?
 
 I started this project out as to learn and experiment with react-native. I have taken an app called kite and tried to rework the UI and slowly some of the features into it. 
@@ -14,26 +14,19 @@ As of now, its just a simple project I am working on.
 I have been thinking of making this into some nice opensource project for screening stocks. This will however take time and I do not know the financial implications of that, It would be awesome if it works out.
 
 
+## LOGS
 
-//////////////////////////////////////////////////
-
-Update 20th May:
+### Update 20th May:
 Login Details have been added
 Working on logged state checker 
 and a logout option
 
-//////////////////////////////////////////////////
-
-//////////////////////////////////////////////////
-
-Update 19th May:
+### Update 19th May:
 Integrated PIN page.
 made changes to Routing
 Started from Login -> Pin -> __DrawNav
 
-//////////////////////////////////////////////////
-
-Update log 18th May:
+### Update log 18th May:
 
 I have been able to fix most of the issues in navigation. Quite surprised why I didnt get this in the first place.
 The code can be cloned and as long as dependancies are taken care of, you can run the demo app.
@@ -42,10 +35,7 @@ Next to DO:
 Detailing on the drawer menu
 Move bottom tab to top (or get rid of it)
 
-
-//////////////////////////////////////////////////
-
-Update log 18th May:
+### Update log 18th May:
 
 I had made a big blunder on the react-navigation modules. It was the wrong version on the package.json and I also had a double installed with npm and yarn. 
 
@@ -53,7 +43,7 @@ I have made a change now and its working now.
 I have been able to make a cleaner code right now,
 seperating the files.
 
-//////////////////////////////////////////////////
+### INTRO
 
 A mockup of the app Kite from Zerodha made with react native. Its a work in progress
 
