@@ -4,8 +4,6 @@
 import React, {Component } from 'react';
 import { Alert, 
          View, 
-         Text,
-         TextInput, 
          Image, 
          ActivityIndicator,
          StatusBar,
@@ -15,30 +13,28 @@ import { Alert,
 import {createStackNavigator} from 'react-navigation'
 
 import {login} from '../themes/login_style'
-import {Pin} from '../screens/Pin'
 
 export class Loading extends Component {
   constructor(props) {
     super(props);
-    this.loaddata()
+     this.loadData()
 
   }
-  loaddata = async() => {
-    const {clientid, password} = this.state
-    if(userInfo.username===clientid && userInfo.password===password)
-    this.props.navigation.navigate('Pin')
-    else
-    Alert.alert('Wrong information')
+  loadData = async() => {
+  // const logged = await AsyncStorage.getItem('logged');
+  //  this.props.navigation.navigate(logged !== '1'? 'Login'||'DashScreen')
+  Alert.alert('LOADING SCREEN DONE')
+  this.props.navigation.navigate('Login')
   }
 
   render() {
     return (
       <View style={login.container}>
         
-        <View style={login.loginBox}>
-          
-          <Image source={require('../src/img/ic_launcher.png')} style={login.logoHome} />
-                    
+        <View style={login.loginBox} onPress= {this.loadData.bind()}>
+          <Image source={require('../src/img/ic_loading.png')} 
+            style={login.logoLoading} 
+            />           
         </View>
         <ActivityIndicator />
         <StatusBar barstyle="default" />

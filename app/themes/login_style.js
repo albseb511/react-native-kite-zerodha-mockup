@@ -22,6 +22,13 @@ export const login = StyleSheet.create({
       width: 200,
       resizeMode: "contain"
     },
+    logoLoading:{
+      marginTop: 0,
+      marginBottom:0,
+      width: 75,
+      height: 75,
+      resizeMode: "contain"
+    },
      inputText: {
        height: 40, 
        width: 300, 

@@ -5,7 +5,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 
 import {createStackNavigator, createAppContainer} from 'react-navigation'
 
-import {CardCompany} from '../components/Components'
+import CardCompany from '../components/Components'
 import { Card } from 'react-native-elements';
 
 export class MarketScreen extends Component {

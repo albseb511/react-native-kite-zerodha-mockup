@@ -22,6 +22,7 @@ import {MarketScreen} from './app/screens/Market'
 import {Orders} from './app/screens/Orders'
 import {Holdings} from './app/screens/Holdings'
 import {Notifications} from './app/screens/Notifications'
+import {Loading} from './app/screens/Loading'
 
 
 /* Dash Tab Navigator Definition
@@ -66,19 +67,25 @@ const __DrawNav = createDrawerNavigator({
 });
 
 
-const _SwitchApp = createSwitchNavigator({
+const _SwitchApp = createStackNavigator({
+  Pin: Pin,
   DashScreen: __DrawNav
 },
+{
+     headerMode:'none'
+  }
 )
 
 
-const LoginNav = createStackNavigator ({
+const LoginNav = createSwitchNavigator ({
+  Loading: Loading,
   Login: Login,
-  Pin: Pin,
   DashScreen: _SwitchApp
 
 },{
-  headerMode: 'none'
+  headerMode: 'none',
+  initialRouteName: 'Loading',
+  
 }
 )
 

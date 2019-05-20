@@ -12,6 +12,7 @@ export class Pin extends Component {
   }
   onPIN = async() => {
     const { PIN } = this.state
+    
     if(userInfo.PIN===PIN)
     this.props.navigation.navigate('DashScreen')
     else
@@ -19,7 +20,7 @@ export class Pin extends Component {
   }
 
   _onGoBack() {
-    Alert.alert('GOTO HOME')
+    this.props.navigation.navigate('Login')
   }    
 
   render() {

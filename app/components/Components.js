@@ -3,7 +3,7 @@ import {TouchableOpacity, View, Text} from 'react-native';
 
 import {cards} from '../themes/Cards'
 
-export class CardCompany extends Component {
+export default class CardCompany extends Component {
 
     cardExpand = () => {
         if(`${this.state.heightCard}`!=150)
