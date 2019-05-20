@@ -7,7 +7,8 @@ I started this project out as to learn and experiment with react-native. I have 
 ## How does it work?
 It can be cloned, and after installing all dependencies it can be installed onto your phone or virtual device. This is not tested in all phones. 
 
-v0.1
+### v0.1
+
 [![Demo](https://i.imgur.com/8yx4Uat.gif)]
 
 ## Who will use this repo or project?
