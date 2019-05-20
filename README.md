@@ -7,6 +7,8 @@ I started this project out as to learn and experiment with react-native. I have 
 ## How does it work?
 It can be cloned, and after installing all dependencies it can be installed onto your phone or virtual device. This is not tested in all phones. 
 
+<img src="./references/test.gif">
+
 ## Who will use this repo or project?
 As of now, its just a simple project I am working on.
 
