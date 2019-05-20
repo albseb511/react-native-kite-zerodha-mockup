@@ -15,7 +15,7 @@ import {createStackNavigator} from 'react-navigation'
 import {login} from '../themes/login_style'
 import {Pin} from '../screens/Pin'
 
-
+const userInfo = {username:'admin',password:'123456'};
 
 export class Login extends Component {
   constructor(props) {
@@ -25,10 +25,12 @@ export class Login extends Component {
       password: ''
     };
   }
-  onLogin() {
-    const { clientId, password } = this.state;
-    if(clientId!=null)
-    Alert.alert('Credentials', `${clientId} + ${password}`);
+  onLogin = async() => {
+    const {clientid, password} = this.state
+    if(userInfo.username===clientid && userInfo.password===password)
+    this.props.navigation.navigate('Pin')
+    else
+    Alert.alert('Wrong information')
   }
 
   render() {
@@ -42,14 +44,14 @@ export class Login extends Component {
           <Text style={login.header}> CLIENT ID </Text>
           
           <TextInput style={login.inputText}
-          onChangeText={(clientId) => this.setState({clientId})}
-          value={this.state.text} placeholder="Type in your Client ID"/>
+          onChangeText={(clientid) => this.setState({clientid})}
+          value={this.state.clientid} placeholder="Type in your Client ID"/>
 
           <Text style={login.header}> PASSWORD</Text>        
 
           <TextInput style={login.inputText}
             onChangeText={(password) => this.setState({password})}
-            value={this.state.text} 
+            value={this.state.password} 
              placeholder="Type in your Password"
              secureTextEntry={true}/>
           
@@ -58,7 +60,7 @@ export class Login extends Component {
 
         <View style={login.buttonContainer}>
           <Button
-           onPress={() => this.props.navigation.navigate('Pin')}
+           onPress={this.onLogin.bind()}
             title="NEXT"
             type = "solid"
             //color="#e17055" 

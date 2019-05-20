@@ -1,6 +1,8 @@
 import React, {Component } from 'react';
 import { Alert, StyleSheet, View, Text , TextInput, Image, Button, Linking} from 'react-native';
 
+const userInfo = {PIN:'1234'};
+
 export class Pin extends Component {
   constructor(props) {
     super(props);
@@ -8,10 +10,12 @@ export class Pin extends Component {
       PIN: ''
     };
   }
-  onLogin() {
-    const { PIN } = this.state;
-    if(PIN!=null)
-    Alert.alert('Credentials', `${PIN}`);
+  onPIN = async() => {
+    const { PIN } = this.state
+    if(userInfo.PIN===PIN)
+    this.props.navigation.navigate('DashScreen')
+    else
+    Alert.alert('Wrong PIN')
   }
 
   _onGoBack() {
@@ -36,7 +40,7 @@ export class Pin extends Component {
 
         <View style={styles.buttonContainer}>
           <Button
-            onPress={() => this.props.navigation.navigate('DashScreen')}
+            onPress={this.onPIN.bind()}
             title="LOGIN"
             type = "solid"
             //color="#e17055" 

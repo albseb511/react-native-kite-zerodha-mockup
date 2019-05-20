@@ -13,15 +13,24 @@ export const appStyle = StyleSheet.create({
 
 export const cards = StyleSheet.create({
     companyCard: {
-      height: 75,
+      height: 150,
       flexDirection: 'row',
       borderBottomWidth: 0.3,
-      borderColor: 'gray'
+      borderColor: 'gray',
+      
+
+    },
+      companyOptions:{
+        height: 0,
+        flexDirection: 'row',
+        borderBottomWidth: 0.3,
+        borderColor: 'gray',
     },
     companyDetails: {
       flex:1,
       flexDirection: 'column',
       justifyContent: 'center',
+      
       
     },
     companyPrice: {
