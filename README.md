@@ -1,5 +1,21 @@
 # react-native-kite-zerodha-mockup
 //////////////////////////////////////////////////
+#What is this repo or project?
+
+I started this project out as to learn and experiment with react-native. I have taken an app called kite and tried to rework the UI and slowly some of the features into it. 
+
+#How does it work?
+It can be cloned, and after installing all dependencies it can be installed onto your phone or virtual device. This is not tested in all phones. 
+
+#Who will use this repo or project?
+As of now, its just a simple project I am working on.
+
+#What is the goal of this project?
+I have been thinking of making this into some nice opensource project for screening stocks. This will however take time and I do not know the financial implications of that, It would be awesome if it works out.
+
+
+
+//////////////////////////////////////////////////
 
 Update 20th May:
 Login Details have been added
