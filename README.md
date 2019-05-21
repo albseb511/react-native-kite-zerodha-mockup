@@ -41,6 +41,10 @@ I have been thinking of making this into some nice opensource project for screen
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
+## Acknowledgements
+[Kite - Zerodha](https://zerodha.com/)
+I used their app for reference. So the team deserves credit for the UI and workflow
+
 
 ## LOGS
 
