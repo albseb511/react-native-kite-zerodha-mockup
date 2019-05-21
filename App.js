@@ -29,7 +29,7 @@ import {Holdings} from './app/screens/Holdings'
 import {Notifications} from './app/screens/Notifications'
 import {Loading} from './app/screens/Loading'
 import { Icon } from 'react-native-elements';
-
+//import {KiteDrawer} from './app/components/Drawer'
 
 /* Dash Tab Navigator Definition
  const __DashTab = createBottomTabNavigator ({
@@ -47,7 +47,7 @@ and change to __DashTab
 // CUSTOM DRAWER START
 const KiteDrawer = (props) => (
   <SafeAreaView style={{flex:1}}>
-    <View style={{height:150, backgroundColor:"#e74c3c",padding:10,alignContent:'center'}}>
+    <View style={{height:150, backgroundColor:"#e74c3c",padding:10,justifyContent:'space-evenly'}}>
     <Image source={require('./app/src/img/zerodha.png')} 
             style={{alignSelf:'flex-end', height:20, resizeMode:'contain'}}/>
       <Image source={require('./app/src/img/ic_loading.png')} 
@@ -165,7 +165,8 @@ const LoginNav = createSwitchNavigator ({
 }
 )
 
-
+//Use __DrawNav for going to dashboard page directly
+//Use LoginNav to goto login page
 const NavKite = createAppContainer(__DrawNav);
 
 export default class NavigatorKit extends Component {

@@ -7,6 +7,14 @@ export const appStyle = StyleSheet.create({
          alignItems: 'center',
      
       },
+      cardContainer:{
+        height:150,
+        flexDirection: 'column',
+        alignItems: 'center',
+        borderBottomWidth: 0.3,
+        borderColor:'gray'
+    
+      }
   
   })
   
@@ -16,9 +24,7 @@ export const cards = StyleSheet.create({
       height: 75,
       flexDirection: 'row',
       borderBottomWidth: 0.3,
-      borderColor: 'gray',
-      
-
+      borderColor: 'gray',      
     },
       companyOptions:{
         height: 0,
@@ -39,6 +45,23 @@ export const cards = StyleSheet.create({
       justifyContent: 'center',
       
       
+    },
+    companyHidden:{
+      height:0,
+      flexDirection:'row',
+      borderColor: 'gray',
+      justifyContent:'space-between'
+    },
+    companyAction:{
+      flex:1,
+      padding:25,
+      alignSelf:'center',
+
+    },
+    Card:{
+      height: 150,
+      borderBottomWidth: 0.3,
+      borderColor: 'gray',  
     },
     ltext: {
       fontSize: 14,

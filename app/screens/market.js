@@ -19,6 +19,7 @@ export class MarketScreen extends Component {
       icon3Color: "gray",
       icon4Color: "gray",
       heightCard: 75,
+      heightCard2: 0,
       visibility: 0
     };
     
@@ -97,11 +98,27 @@ export class MarketScreen extends Component {
    cardExpand = () => {
     if(`${this.state.heightCard}`!=150)
     this.setState({
-      heightCard: 75*2           
+   //   heightCard: 75*2,
+       
     })
     else
     this.setState({
-      heightCard: 150/2           
+    //  heightCard: 150/2 ,
+              
+    })
+
+   }
+
+   cardExpand2 = () => {
+    if(`${this.state.heightCard}`!=150)
+    this.setState({
+      heightCard: 75*2,
+      heightCard2: 75           
+    })
+    else
+    this.setState({
+      heightCard: 150/2,
+      heightCard2: 0          
     })
 
    }
@@ -178,7 +195,7 @@ export class MarketScreen extends Component {
        
 
         <TouchableOpacity 
-          style = {[cards.companyCard, {height:this.state.heightCard},]}
+          style = {[cards.companyCard, {},]}
            onPress = {this.cardExpand.bind()} >
           <View style = {cards.companyDetails}>
             <View style = {{flexDirection:'row'}}>
@@ -204,8 +221,8 @@ export class MarketScreen extends Component {
         </TouchableOpacity>
 
         
-      
-        <TouchableOpacity style = {[cards.companyCard, ]} >
+      <View style={[appStyle.cardContainer, {height:this.state.heightCard}]}> 
+        <TouchableOpacity style = {cards.companyCard} onPress={this.cardExpand2.bind()} >
           <View style = {cards.companyDetails}>
             <View style = {{flexDirection:'row'}}>
               <Text style = {cards.ltext}>N100</Text> 
@@ -229,11 +246,31 @@ export class MarketScreen extends Component {
           </View>
         </TouchableOpacity>
 
+        <View style = {[cards.companyHidden,{height:this.state.heightCard2}]} >
+          <TouchableOpacity>
+            <FontAwesome5 name="chart-bar" size={20} style={cards.companyAction}/>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <FontAwesome5 name="file-alt" size={20} style={cards.companyAction}/>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <FontAwesome5 name="credit-card" size={20} style={cards.companyAction}/>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={[cards.companyAction,{color:"turquoise"}]}>B</Text>
+          </TouchableOpacity>
+          <TouchableOpacity> 
+            <Text style={[cards.companyAction,{color:"#e74c3c"}]}>S</Text>
+          </TouchableOpacity>
+        </View>
+        
+
+      </View>
         
         <TouchableOpacity style = {[cards.companyCard, ]} >
           <View style = {cards.companyDetails}>
             <View style = {{flexDirection:'row'}}>
-              <Text style = {cards.ltext}>N100</Text> 
+              <Text style = {cards.ltext}>N1100</Text> 
             </View>
 
             <View style = {{flexDirection:'row'}}>

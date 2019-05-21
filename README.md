@@ -5,7 +5,11 @@
 I started this project out as to learn and experiment with react-native. I have taken an app called kite and tried to rework the UI and slowly some of the features into it. 
 
 ### v0.1
-![Demo](https://i.imgur.com/8yx4Uat.gif)
+![Demo](https://github.com/albseb511/react-native-kite-zerodha-mockup/blob/master/references/gif/test.gif?raw=true)
+Drawer
+![Demo](https://github.com/albseb511/react-native-kite-zerodha-mockup/blob/master/references/gif/drawer.gif?raw=true)
+Card
+![Demo](https://github.com/albseb511/react-native-kite-zerodha-mockup/blob/master/references/gif/card.gif?raw=true)
 
 ## How does it work?
 It can be cloned, and after installing all dependencies it can be installed onto your phone or virtual device. This is not tested in all phones. 
