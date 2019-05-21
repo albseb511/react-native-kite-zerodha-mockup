@@ -12,10 +12,11 @@ import { Alert,
         ScrollView,
         Button} from 'react-native';
 
-
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import {DrawerItems} from 'react-navigation'
     
 
+// CUSTOM DRAWER START
 export const KiteDrawer = (props) => (
     <SafeAreaView style={{flex:1}}>
       <View style={{height:150, backgroundColor:"#e74c3c",padding:10,justifyContent:'space-evenly'}}>
@@ -56,19 +57,21 @@ export const KiteDrawer = (props) => (
       <ScrollView>
           <DrawerItems {...props} />
           <View>
-            <Text style={{padding:20,borderTopWidth:0.5}}>ACCOUNT</Text>
+            <Text style={{padding:20,borderTopWidth:0.5, paddingBottom:5}}>ACCOUNT</Text>
   
-            <TouchableOpacity style={{flexDirection:'row', padding:20}}>
+            <TouchableOpacity style={{flexDirection:'row', padding:20, paddingBottom:5}}>
               <FontAwesome5 name={'money-bill-wave'}  size={15} />
               <Text style={{paddingLeft:25}}>Funds</Text>
             </TouchableOpacity>
   
-            <TouchableOpacity style={{flexDirection:'row', padding:20}}>
+            <TouchableOpacity style={{flexDirection:'row', padding:20, paddingBottom:5}}
+            onPress={ ()=>{ Linking.openURL('https://kite.trade/docs/kite/#kite-android')}}>
               <FontAwesome5 name={'life-ring'}  size={15} />
               <Text style={{paddingLeft:25}}>User manual</Text>
             </TouchableOpacity>
   
-            <TouchableOpacity style={{flexDirection:'row', padding:20}}>
+            <TouchableOpacity style={{flexDirection:'row', padding:20, paddingBottom:5}}
+            onPress={()=>{}}>
               <FontAwesome5 name={'power-off'}  size={15} />
               <Text style={{paddingLeft:25}}>Logout</Text>
             </TouchableOpacity>
@@ -79,3 +82,6 @@ export const KiteDrawer = (props) => (
   
     </SafeAreaView>
   )
+  
+  // CUSTOM DRAWER END
+  

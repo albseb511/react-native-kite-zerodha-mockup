@@ -14,6 +14,17 @@ export const appStyle = StyleSheet.create({
         borderBottomWidth: 0.3,
         borderColor:'gray'
     
+      },
+      circle:{
+        //width:40,
+        //height:40,
+        //borderRadius:20,
+        //borderWidth:0.3,
+        //borderColor:"gray",
+        //backgroundColor:"transparent",
+        //flex:1,
+        //justifyContent:'space-between'
+
       }
   
   })
@@ -55,7 +66,7 @@ export const cards = StyleSheet.create({
     companyAction:{
       flex:1,
       padding:25,
-      alignSelf:'center',
+      alignSelf:'center'
 
     },
     Card:{

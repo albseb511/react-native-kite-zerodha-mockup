@@ -247,19 +247,19 @@ export class MarketScreen extends Component {
         </TouchableOpacity>
 
         <View style = {[cards.companyHidden,{height:this.state.heightCard2}]} >
-          <TouchableOpacity>
+          <TouchableOpacity style={appStyle.circle}>
             <FontAwesome5 name="chart-bar" size={20} style={cards.companyAction}/>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity style={appStyle.circle}>
             <FontAwesome5 name="file-alt" size={20} style={cards.companyAction}/>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity style={appStyle.circle}>
             <FontAwesome5 name="credit-card" size={20} style={cards.companyAction}/>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity style={appStyle.circle}>
             <Text style={[cards.companyAction,{color:"turquoise"}]}>B</Text>
           </TouchableOpacity>
-          <TouchableOpacity> 
+          <TouchableOpacity style={appStyle.circle}> 
             <Text style={[cards.companyAction,{color:"#e74c3c"}]}>S</Text>
           </TouchableOpacity>
         </View>

@@ -1,5 +1,5 @@
 import React, {Component } from 'react';
-import { Alert, Button, StyleSheet, View, Text , TextInput, TouchableOpacity} from 'react-native';
+import { Alert, Button, StyleSheet, View, Text , TextInput, TouchableOpacity, ScrollView} from 'react-native';
 import { Icon } from 'react-native-elements';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 
@@ -180,9 +180,9 @@ __tChange1 = () => {
         </View>
         
 
-
-        <View style = {{alignSelf:'center', alignItems:'center', justifyContent:'center', flex:1}}>
-            <FontAwesome5 name="anchor" size={100}/>
+      <ScrollView horizontal={true} scrolleventthrottle={16}>
+        <View style = {{flex:1,alignSelf:'center', alignItems:'center', justifyContent:'center', flex:1}}>
+            <FontAwesome5 name="anchor" size={100} />
             <Text> NO POSITIONS </Text>
             <Text> Place Some orders from marketwatch </Text>
             <View style={styles.buttonContainer}>
@@ -196,6 +196,7 @@ __tChange1 = () => {
                />
              </View>
         </View>
+        </ScrollView>
 
 
 

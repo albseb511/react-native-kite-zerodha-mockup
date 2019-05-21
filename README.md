@@ -6,9 +6,9 @@ I started this project out as to learn and experiment with react-native. I have 
 
 ### v0.1
 ![Demo](https://github.com/albseb511/react-native-kite-zerodha-mockup/blob/master/references/gif/test.gif?raw=true)
-Drawer
+
 ![Demo](https://github.com/albseb511/react-native-kite-zerodha-mockup/blob/master/references/gif/drawer.gif?raw=true)
-Card
+
 ![Demo](https://github.com/albseb511/react-native-kite-zerodha-mockup/blob/master/references/gif/card.gif?raw=true)
 
 ## How does it work?
@@ -46,7 +46,7 @@ I have been thinking of making this into some nice opensource project for screen
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 ## Acknowledgements
 [Kite - Zerodha](https://zerodha.com/)
@@ -54,6 +54,15 @@ I used their app for reference. So the team deserves credit for the UI and workf
 
 
 ## LOGS
+
+### Update 21st May:
+- Side Drawer customisation
+- Cards animation
+- README cleaning up
+NEED TO WORK ON:
+- Statechange for logged status
+- Looking to get firebase backend
+- Looking to integrate Quandl for updating 1/2 stocks live
 
 ### Update 20th May:
 Login Details have been added
