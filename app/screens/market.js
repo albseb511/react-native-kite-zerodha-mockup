@@ -253,9 +253,6 @@ export class MarketScreen extends Component {
             </View>
           </View>
         </TouchableOpacity>     
-
-        
-        
      </View>
 
     );

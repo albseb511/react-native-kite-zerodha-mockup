@@ -19,7 +19,7 @@ import {createStackNavigator,
         createSwitchNavigator,
         DrawerItems} from 'react-navigation'
 
-
+        import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 
 import {Login} from './app/screens/Login'        
 import {Pin} from './app/screens/Pin'
@@ -28,6 +28,7 @@ import {Orders} from './app/screens/Orders'
 import {Holdings} from './app/screens/Holdings'
 import {Notifications} from './app/screens/Notifications'
 import {Loading} from './app/screens/Loading'
+import { Icon } from 'react-native-elements';
 
 
 /* Dash Tab Navigator Definition
@@ -83,8 +84,25 @@ const KiteDrawer = (props) => (
     </View>
     <ScrollView>
         <DrawerItems {...props} />
-        <View style={{}}>
+        <View>
           <Text style={{padding:20,borderTopWidth:0.5}}>ACCOUNT</Text>
+
+          <TouchableOpacity style={{flexDirection:'row', padding:20}}>
+            <FontAwesome5 name={'money-bill-wave'}  size={15} />
+            <Text style={{paddingLeft:25}}>Funds</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={{flexDirection:'row', padding:20}}>
+            <FontAwesome5 name={'life-ring'}  size={15} />
+            <Text style={{paddingLeft:25}}>User manual</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={{flexDirection:'row', padding:20}}>
+            <FontAwesome5 name={'power-off'}  size={15} />
+            <Text style={{paddingLeft:25}}>Logout</Text>
+          </TouchableOpacity>
+
+
         </View>
     </ScrollView>
 
