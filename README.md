@@ -39,7 +39,7 @@ I have been thinking of making this into some nice opensource project for screen
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details
 
 ## Acknowledgements
 [Kite - Zerodha](https://zerodha.com/)
