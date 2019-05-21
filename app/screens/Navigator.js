@@ -1,3 +1,7 @@
+// Backup
+// I have not configured this page yet. 
+// App.js has the same code, I will eventually make App.js cleaner
+
 import React, {Component } from 'react';
 
 import { Alert, 
