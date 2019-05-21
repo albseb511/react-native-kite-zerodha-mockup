@@ -13,7 +13,7 @@ export const appStyle = StyleSheet.create({
 
 export const cards = StyleSheet.create({
     companyCard: {
-      height: 150,
+      height: 75,
       flexDirection: 'row',
       borderBottomWidth: 0.3,
       borderColor: 'gray',
