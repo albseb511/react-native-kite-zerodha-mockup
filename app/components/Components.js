@@ -49,7 +49,3 @@ export default class CardCompany extends Component {
     )
 }
 }
-
-
-
-

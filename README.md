@@ -59,7 +59,8 @@ I used their app for reference. So the team deserves credit for the UI and workf
 - Side Drawer customisation
 - Cards animation
 - README cleaning up
-NEED TO WORK ON:
+
+#### NEED TO WORK ON:
 - Statechange for logged status
 - Looking to get firebase backend
 - Looking to integrate Quandl for updating 1/2 stocks live
