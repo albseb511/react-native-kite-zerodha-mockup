@@ -1,5 +1,10 @@
-import React, {Component } from 'react';
-import { Alert, StyleSheet, View, Text , TextInput, TouchableOpacity} from 'react-native';
+import React, {Component} from 'react';
+import { Alert, 
+        StyleSheet, 
+        View, 
+        Text , 
+        TextInput, 
+        TouchableOpacity} from 'react-native';
 import {appStyle, cards, navBar} from '../themes/appStyle'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 
