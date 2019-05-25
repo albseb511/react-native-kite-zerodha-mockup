@@ -15,27 +15,53 @@ import {createStackNavigator, createAppContainer} from 'react-navigation'
 
 const userInfo = {phoneno:'9901582145',OTP:'1234'}
 
+//FIREBASE
+import * as firebase from 'firebase'
+import {firebaseConfig} from './config'
+// The core Firebase JS SDK is always required and must be listed first 
+//TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#config-web-app -->
+// Your web app's Firebase configuration
+
+// Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    
+
+//END OF FIREBASE
+var machineID = 1100
+var machineStatus = 0
+
 export class pageSimpl extends Component {
     constructor(props){
         super(props);
         this.state = {
             phoneno:'',
             OTP:'',
+            ts:'',
+            key1:''
+
         //    hieghtIntro:200,
         //    heightSimpl:0,
         //    heightOTP:0,
         //    hieghtSuccess:0,
         };
+        
     }
 
+
     getOTP() {
-        //const phoneno = this.state.phoneno
-        //const OTP = this.state.OTP
+
+        var key = firebase.database().ref('/session').push().key
+        
+        firebase.database().ref('/session').child(key).set({Phone:'9901582145',success:'true',timestamp:'19:05:25:02:35:45'})
         //if(userInfo.__phoneno===phoneno)
-        Alert.alert(userInfo.phoneno)
+        //Alert.alert(`${phoneno}`)
     }
     onUnlock(){
-       
+        
+        var key = firebase.database().ref('/session').push().key
+        firebase.database().ref('/machine').child(key).set({MID:machineID,mStatus:0})
+          Alert.alert('Function passed'+`${machineID}`+`${machineStatus}`)
     }
 
 
@@ -51,10 +77,10 @@ export class pageSimpl extends Component {
                                 <Text style={[nbStyles.text,{fontSize: 20,fontWeight:'bold',marginTop:-20}]}>
                                    Please enter Phone no:
                                 </Text>
-                                <TextInput  style={{borderWidth:0.5, marginBottom:5}}
+                                <TextInput  style={{borderBottomWidth:0.5, marginBottom:15}}
                                             keyboardType='numeric' placeholder="Enter your number"
                                             pattern="[1-9]{1}[0-9]{9}"
-                                            value={this.state.phoneno}
+                                            
                                             onChangeText={(phoneno) => this.setState({phoneno})}/>
                                 <Button title="SEND OTP" onPress={this.getOTP.bind()}/>
                                 
@@ -62,12 +88,12 @@ export class pageSimpl extends Component {
                                 <Text style={[nbStyles.text,{fontSize: 20,fontWeight:'bold'}]}>
                                    Please enter OTP:
                                 </Text>
-                                <TextInput  style={{borderWidth:0.5, marginBottom:5}}
+                                <TextInput  style={{borderBottomWidth:0.5, marginBottom:15}}
                                             keyboardType='numeric' placeholder="Enter your number"
                                             pattern="[0-9]{4}" 
-                                            value={this.state.OTP}
+                                            
                                             onChangeText={(OTP) => this.setState({OTP})}/>
-                                <Button title="UNLOCK" onPress={()=> this.props.navigation.navigate('pageUnlock')}/>
+                                <Button title="UNLOCK" onPress={this.onUnlock.bind()}/>
                                 
                             </View>
                             <View>

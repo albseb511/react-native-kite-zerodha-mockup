@@ -61,6 +61,8 @@ var firebaseConfig = {
 };
 */
 
+
+
 //STACK NAVIGATOR DEFINITION
 const AppNav = createStackNavigator({
   DASHTB:  MarketScreen
@@ -97,14 +99,17 @@ const __DrawNav = createDrawerNavigator({
 // I made it initially as Switch Navigator, removed it and 
 // changed to StackNavigator. I made LoginNav as a SwitchNavigator
 //Change DashScreen to __DashNav
-const _SwitchApp = createStackNavigator({
+const _SwitchApp = createSwitchNavigator({
   homeNB: homeNB,
-  pageSimpl: pageSimpl,
-  pageUnlock: pageUnlock
+  pageSimpl: {screen:pageSimpl,gesturesEnabled:false},
+  pageUnlock: {screen:pageUnlock, gesturesEnabled:false}
 
 },
 {
-     headerMode:'none'
+     headerMode:'none',
+     navigationOptions:{
+        gesturesEnabled: false
+     }
   }
 )
 
