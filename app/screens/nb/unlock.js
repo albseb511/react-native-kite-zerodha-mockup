@@ -13,6 +13,16 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 
 import {createStackNavigator, createAppContainer} from 'react-navigation'
 
+//FIREBASE
+import * as firebase from 'firebase'
+import {firebaseConfig} from './config'
+
+var A1= "Chicken Sandwich"
+var A2= "Idly Vada"
+var A3= "Paneer Rice"
+var A4= "Dal Rice"
+//A1=firebase.database().ref('Stock/A1/').once('value')
+
 export class pageUnlock extends Component {
     constructor(props){
         super(props);
@@ -25,6 +35,7 @@ export class pageUnlock extends Component {
     }
 
 
+
     render () {
         return(
             <View style={nbStyles.container}>
@@ -33,13 +44,13 @@ export class pageUnlock extends Component {
                         <View style={nbStyles.cardContent}>
                             <View style={nbStyles.textContainer}>
                                 <Text style={[nbStyles.text,{fontSize: 20,fontWeight:'bold',alignSelf:'center'}]}>
-                                   UNLOCK PAGE
+                                   Thank you for using Nombot
                                 </Text>
                                 <Text style={nbStyles.text}>
-                                   Press the Button to Unlock
+                                   Please see your summary of the bill
                                 </Text>
                                 <Text style={nbStyles.text}>
-                                   Payment Gateway: Simpl
+                                   Please close the door once items are taken.
                                 </Text>
                             </View>
 
@@ -58,10 +69,10 @@ export class pageUnlock extends Component {
                                    Total: Rs. 240
                                 </Text>
                                 <Text style={[nbStyles.text]}>
-                                   1. Chicken Sandwich x 1: Rs. 120
+                                   1. {A1} x 1: Rs. 120
                                 </Text>
                                 <Text style={nbStyles.text}>
-                                   2. Idly Vada x 2: Rs. 60
+                                   2. {A2} x 2: Rs. 60
                                 </Text>
                                 
                             </View>

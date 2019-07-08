@@ -1,0 +1,44 @@
+[
+  {
+    "_id": 0,
+    "name": "Chicken Sandwich",
+    "qty": 10,
+    "price": 140,
+    "image": "https://source.unsplash.com/user/briansuman/80x80"
+  },
+  {
+    "_id": 1,
+    "name": "Idly Vada",
+    "qty": 10,
+    "price": 100,
+    "image": "https://source.unsplash.com/user/briansuman/80x80"
+  },
+  {
+    "_id": 2,
+    "name": "Roasted Bell Pepper Risotto",
+    "qty": 4,
+    "price": 130,
+    "image": "https://source.unsplash.com/user/briansuman/80x80"
+  },
+  {
+    "_id": 3,
+    "name": "Chilli Chicken Cheese Maggi",
+    "qty": 5,
+    "price": 130,
+    "image": "https://source.unsplash.com/user/briansuman/80x80"
+  },
+  {
+    "_id": 4,
+    "name": "Power Booster Chicken Salad",
+    "qty": 17,
+    "price": 120,
+    "image": "https://source.unsplash.com/user/briansuman/80x80"
+  },
+  {
+    "_id": 5,
+    "name": "Peri Peri Chicken with Egg Corn Rice",
+    "qty": 7,
+    "price": 110,
+    "image": "https://source.unsplash.com/user/briansuman/80x80"
+  }
+]

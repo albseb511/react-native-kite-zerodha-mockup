@@ -1,283 +1,114 @@
 import React, {Component } from 'react';
-import { Alert, StyleSheet, View, Text , TextInput, TouchableOpacity} from 'react-native';
-import {appStyle, cards, navBar} from './app/themes/appStyle'
+
+import { Alert, 
+        StyleSheet, 
+        View, 
+        Text , 
+        TextInput, 
+        Image,
+        Linking,
+        TouchableOpacity,
+        SafeAreaView,
+        ScrollView,
+        Button} from 'react-native';
+
+import {createStackNavigator, 
+        createAppContainer, 
+        createDrawerNavigator, 
+        createBottomTabNavigator,
+        createSwitchNavigator,
+        DrawerItems} from 'react-navigation'
+
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 
-import {createStackNavigator, createAppContainer} from 'react-navigation';
+import {Login} from './app/screens/Login'        
+import {Pin} from './app/screens/Pin'
+import {MarketScreen} from './app/screens/Market'
+import {Orders} from './app/screens/Orders'
+import {Holdings} from './app/screens/Holdings'
+import {Notifications} from './app/screens/Notifications'
+import {Loading} from './app/screens/Loading'
+import { Icon } from 'react-native-elements';
+import {KiteDrawer} from './app/components/Drawer'
+//import {homeNB} from './app/screens/nb/home'
 
-class Market extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { 
-      search: '',
-      iconLeftColor: "gray",
-      icon1Color: "#e74c3c",
-      icon2Color: "gray",
-      icon3Color: "gray",
-      icon4Color: "gray",
-      heightCard: 75,
-      visibility: 0
-    };
-    
-  }
-//Search Bar
-  updateSearch = search => {
-    this.setState({ search });
-  };
-//Go back button
-  _onGoBack() {
-    Alert.alert('GOTO HOME')
-  }    
-//Login button
-  onLogin() {
-    const { PIN } = this.state;
-    if(PIN!=null)
-    Alert.alert('Credentials', `${PIN}`);
-  }
-
-//On Press function
-  onPressIconLeft = () => {
-    this.setState({
-      iconLeftColor : "#e74c3c",
-      icon1Color: "gray",
-      icon2Color: "gray",
-      icon3Color: "gray",
-      icon4Color: "gray"
-    })
-
-   }
-  
-   onPressIcon1 = () => {
-    this.setState({
-      iconLeftColor : "gray",
-      icon1Color: "#e74c3c",
-      icon2Color: "gray",
-      icon3Color: "gray",
-      icon4Color: "gray"
-    })
-
-   }
-
-   onPressIcon2 = () => {
-    this.setState({
-      iconLeftColor : "gray",
-      icon1Color: "gray",
-      icon2Color: "#e74c3c",
-      icon3Color: "gray",
-      icon4Color: "gray"
-    })
-
-   }
-
-   onPressIcon3 = () => {
-    this.setState({
-      iconLeftColor : "gray",
-      icon1Color: "gray",
-      icon2Color: "gray",
-      icon3Color: "#e74c3c",
-      icon4Color: "gray"
-    })
-
-   }
-
-   onPressIcon4 = () => {
-    this.setState({
-      iconLeftColor : "gray",
-      icon1Color: "gray",
-      icon2Color: "gray",
-      icon3Color: "gray",
-      icon4Color: "#e74c3c",
-    })
-
-   }
-//CARD EXPAND TOGGLE FUNCTION
-   cardExpand = () => {
-    if(`${this.state.heightCard}`!=150)
-    this.setState({
-      heightCard: 75*2           
-    })
-    else
-    this.setState({
-      heightCard: 150/2           
-    })
-
-   }
-
-   
+/* Dash Tab Navigator Definition
+ const __DashTab = createBottomTabNavigator ({
+ MarketScreen,
+ Orders,
+ Holdings,
+ Notifications
   
 
-
-  render() {    
-    const { search } = this.state;
-
-    return (
-      <View style={appStyle.container}>
+})  
+To use remove MarketScreen from AppNav StackNavigator,
+and change to __DashTab
+*/
 
 
-      <View style={navBar.topBar}>
-        
-        <View style={navBar.leftIcon}>
-          
-          <Text style={{margin: 20}} onPress={this.onPressIconLeft.bind()}>
-            
-              <FontAwesome5 name={'bars'}  size={25} color={this.state.iconLeftColor}/>
-            
-          </Text>
-        </View>  
-
-        <View style={navBar.icon}>
-         <Text style={{marginTop: 20}} onPress={this.onPressIcon1.bind()}>
-            <FontAwesome5 name={'binoculars'} size={25} color={this.state.icon1Color}/>
-          </Text>
-        </View>
-
-        <View style={navBar.icon}>
-           <Text style={{marginTop: 20}} onPress={this.onPressIcon2.bind()}>
-              <FontAwesome5 name={'book-open'} size={25} color={this.state.icon2Color}/>
-            </Text>  
-        </View>
-
-        <View style={navBar.icon}>
-              <Text style={{marginTop: 20}} onPress={this.onPressIcon3.bind()}>
-                <FontAwesome5 name={'suitcase'} size={25} color={this.state.icon3Color}/>
-              </Text>
-        </View>
-
-        <View style={navBar.icon}>
-              <Text style={{marginTop: 20}} onPress={this.onPressIcon4.bind()}>
-                <FontAwesome5 name={'bell'} size={25} color={this.state.icon4Color}/>
-              </Text>
-        </View>
-      
-      </View>
+//STACK NAVIGATOR DEFINITION
+const AppNav = createStackNavigator({
+  DASHTB:  MarketScreen
+  
+},
+{
+  headerMode: 'none',
+  defaultNavigationOptions: ({navigation})=>{
+    return{
+      headerLeft:(
+        <Text >SETTINGS </Text>
+      )
+    }
+  }
+ 
+}
+);
 
 
+//DRAWER NAVIGATION DEFINITION
+const __DrawNav = createDrawerNavigator({
+  //homeNB: homeNB,
+  Marketwatch: AppNav,
+  Orders: Orders,
+  Portfolio: Holdings,
+  Notifications: Notifications,
+  Logout:Login,
+  
+},{
+  contentComponent: KiteDrawer,
+});
 
-        <View  style={navBar.aBarRow}>
-          <View style={navBar.aBarIcon}> 
-             <Text style={{marginTop:20}}>
-               <FontAwesome5 name={'search'}  size={15}/>
-              </Text>
-          </View>
-          <TextInput  
-            placeholder="Add"
-            onChangeText={this.updateSearch}
-            value={search}
-            style = {navBar.aBar}
-          />
-          <View style={navBar.aBarBox}>
-              <Text style={{marginTop: 5}}>
-                <FontAwesome5 name={'binoculars'}  size={25}/>
-              </Text>
-              <Text style={{justifyContent:'center', fontSize:20, marginTop: 5}}> 1</Text>  
-          </View>    
-        </View> 
-       
 
-        <TouchableOpacity 
-          style = {[cards.companyCard, {height:this.state.heightCard},]}
-           onPress = {this.cardExpand.bind()} >
-          <View style = {cards.companyDetails}>
-            <View style = {{flexDirection:'row'}}>
-              <Text style = {cards.ltext}>N100</Text> 
-            </View>
+// I made it initially as Switch Navigator, removed it and 
+// changed to StackNavigator. I made LoginNav as a SwitchNavigator
+const _SwitchApp = createStackNavigator({
+  Pin: Pin,
+  DashScreen: __DrawNav
+},
+{
+     headerMode:'none'
+  }
+)
 
-            <View style = {{flexDirection:'row'}}>
-              <Text style = {cards.stext}>NSE</Text> 
-            </View>
-          </View>
 
-          <View style = {cards.companyPrice}>
-            <View style = {{flexDirection:'row', alignSelf: 'flex-end',}}>
-              <View style= {cards.circle}>
-                <Text style = {[cards.ltext, cards.right]}>520.84</Text> 
-              </View>
+const LoginNav = createSwitchNavigator ({
+  Loading: Loading,
+  Login: Login,
+  DashScreen: _SwitchApp
 
-              <View style = {{flexDirection:'row', alignSelf: 'flex-end',}}>
-                <Text style = {[cards.stext, cards.right]}>7.12 (1.39%)</Text> 
-              </View>      
-            </View>
-          </View>
-        </TouchableOpacity>
+},{
+  headerMode: 'none',
+  initialRouteName: 'Loading',
+  
+}
+)
 
-        
-      
-        <TouchableOpacity style = {[cards.companyCard, ]} >
-          <View style = {cards.companyDetails}>
-            <View style = {{flexDirection:'row'}}>
-              <Text style = {cards.ltext}>N100</Text> 
-            </View>
+//Use __DrawNav for going to dashboard page directly
+//Use LoginNav to goto login page
+const NavKite = createAppContainer(__DrawNav);
 
-            <View style = {{flexDirection:'row'}}>
-              <Text style = {cards.stext}>NSE</Text> 
-            </View>
-          </View>
-
-          <View style = {cards.companyPrice}>
-            <View style = {{flexDirection:'row', alignSelf: 'flex-end',}}>
-              <View style= {cards.circle}>
-                <Text style = {[cards.ltext, cards.right]}>520.84</Text> 
-              </View>
-
-              <View style = {{flexDirection:'row', alignSelf: 'flex-end',}}>
-                <Text style = {[cards.stext, cards.right]}>7.12 (1.39%)</Text> 
-              </View>      
-          </View>
-          </View>
-        </TouchableOpacity>
-
-        
-        <TouchableOpacity style = {[cards.companyCard, ]} >
-          <View style = {cards.companyDetails}>
-            <View style = {{flexDirection:'row'}}>
-              <Text style = {cards.ltext}>N100</Text> 
-            </View>
-
-            <View style = {{flexDirection:'row'}}>
-              <Text style = {cards.stext}>NSE</Text> 
-            </View>
-          </View>
-
-          <View style = {cards.companyPrice}>
-            <View style = {{flexDirection:'row', alignSelf: 'flex-end',}}>
-              <View style= {cards.circle}>
-                <Text style = {[cards.ltext, cards.right]}>520.84</Text> 
-              </View>
-
-              <View style = {{flexDirection:'row', alignSelf: 'flex-end',}}>
-                <Text style = {[cards.stext, cards.right]}>7.12 (1.39%)</Text> 
-              </View>      
-            </View>
-          </View>
-        </TouchableOpacity>        
-        
-     </View>
-
-    );
+export default class NavigatorKit extends Component {
+  render(){
+  return <NavKite />
   }
 }
-
-export default class mainHome extends Component {
-  render()
-  {
-    return(
-      <AppC />
-    );
-  }
-}
-
-const AppStackNav = createStackNavigator ({
- Home: Market
-});
-const AppC = createAppContainer(AppStackNav);
-
-const styles = StyleSheet.create({
-  ttt:{
-    
-    backgroundColor: "#ff0",
-    height: 50
-  },
-  t4:{
-    flex:1
-  }
-});

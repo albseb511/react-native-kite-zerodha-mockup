@@ -1,16 +1,6 @@
 import React, {Component } from 'react';
 
-import { Alert, 
-        StyleSheet, 
-        View, 
-        Text , 
-        TextInput, 
-        Image,
-        Linking,
-        TouchableOpacity,
-        SafeAreaView,
-        ScrollView,
-        Button} from 'react-native';
+import {Text } from 'react-native';
 
 import {createStackNavigator, 
         createAppContainer, 

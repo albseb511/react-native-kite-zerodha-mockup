@@ -58,7 +58,7 @@ var firebaseConfig = {
   storageBucket: "project-id.appspot.com",
   messagingSenderId: "sender-id",
   appID: "app-id",
-};
+}
 */
 
 
@@ -82,19 +82,6 @@ const AppNav = createStackNavigator({
 );
 
 
-//DRAWER NAVIGATION DEFINITION
-const __DrawNav = createDrawerNavigator({
-  homeNB: homeNB,
-  Marketwatch: AppNav,
-  Orders: Orders,
-  Portfolio: Holdings,
-  Notifications: Notifications,
-  Logout:Login,
-  
-},{
-  contentComponent: KiteDrawer,
-});
-
 
 // I made it initially as Switch Navigator, removed it and 
 // changed to StackNavigator. I made LoginNav as a SwitchNavigator
@@ -114,10 +101,26 @@ const _SwitchApp = createSwitchNavigator({
 )
 
 
+//DRAWER NAVIGATION DEFINITION
+const __DrawNav = createDrawerNavigator({
+  homeNB: _SwitchApp,
+  Marketwatch: AppNav,
+  Orders: Orders,
+  Portfolio: Holdings,
+  Notifications: Notifications,
+  Logout:Login,
+  
+},{
+  contentComponent: KiteDrawer,
+});
+
+
+//Change _SwitchApp to Drawnav or interchange
 const LoginNav = createSwitchNavigator ({
   Loading: Loading,
   Login: Login,
-  DashScreen: _SwitchApp
+  DashScreen: __DrawNav,
+  Pin:Pin
 
 },{
   headerMode: 'none',
@@ -128,7 +131,8 @@ const LoginNav = createSwitchNavigator ({
 
 //Use __DrawNav for going to dashboard page directly
 //Use LoginNav to goto login page
-const NavKite = createAppContainer(_SwitchApp);
+//Use _SwitchApp to go for Nombot
+const NavKite = createAppContainer(__DrawNav);
 
 export default class NavigatorKit extends Component {
   render(){
